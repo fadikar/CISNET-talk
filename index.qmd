@@ -1,0 +1,39 @@
+---
+title: "Calibration of Stochastic Epidemiological Models"
+subtitle: ""
+author: "Presenter: Arindam Fadikar"
+affiliation: "Decision and Infrastructure Sciences"
+institute: "Argonne National Laboratory"
+date: today
+date-format: long
+bibliography: refs.bib
+title-slide-attributes:
+  data-background-image: ""
+  data-background-size: cover
+  data-background-opacity: "0.25"
+format:
+  revealjs:
+    margin: 0.15
+    smaller: true
+    code-fold: false
+    code-overflow: scroll
+    self-contained: true
+execute:
+  echo: false
+  warning: false
+  message: false
+  cache: false
+---
+
+## Introduction
+
+Replace this with your first slide content.
+
+## R Code Example
+
+```{r}
+#| label: example
+summary(cars)
+```
+
+## References
