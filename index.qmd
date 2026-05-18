@@ -224,7 +224,7 @@ ggsave("figures/us_map.png", p_us, width = 6, height = 3.5, dpi = 150, bg = "tra
 
       <div style="background:#fef3c7;border-left:4px solid #d97706;border-radius:0 8px 8px 0;padding:9px 13px;">
         <div style="font-weight:700;color:#92400e;">High Output Dimension</div>
-        <div style="color:#555;font-size:0.88em;margin-top:2px;">multivariate time-series outputs, functional data</div>
+        <div style="color:#555;font-size:0.88em;margin-top:2px;">many simulation output, time-series, functional output</div>
       </div>
 
       <div style="background:#fef3c7;border-left:4px solid #d97706;border-radius:0 8px 8px 0;padding:9px 13px;">
@@ -607,7 +607,7 @@ $$\alpha = \min\!\left\{1,\ \frac{L(\theta_\text{can}, r) \cdot q(\theta_\text{c
 :::
 
 ::: {.callout .fragment}
-[Filter]{.hl-blue} + [Densify]{.hl-purple} together ensure the grid [*tracks*]{.hl-green} promising regions as the GP learns."
+[Filter]{.hl-blue} + [Densify]{.hl-purple} together ensure the grid [*tracks*]{.hl-green} promising regions as the GP learns.
 :::
 
 ## Adaptive Grid TOO in Practice
