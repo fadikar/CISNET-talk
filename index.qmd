@@ -23,6 +23,78 @@ execute:
   cache: false
 ---
 
+## Our Team {background-image="figures/background.jpg" background-opacity="0.15"}
+
+```{=html}
+<!-- Oval spoke diagram: rx=380 ry=200, center=(480,270), container 960×540 -->
+<div style="position:relative;width:960px;height:540px;margin:0 auto;">
+
+  <!-- SVG spokes clipped to run only between center box border and card border -->
+  <!-- Center box: left=375, right=585, top=252, bottom=358 (center at 480,305) -->
+  <!-- Jonathan card bottom≈165; Nicholson card left=771; David card left=633; Arindam card right=327; Mickael card right=184 -->
+  <svg style="position:absolute;inset:0;width:100%;height:100%;z-index:1;" viewBox="0 0 960 540">
+    <line x1="480" y1="252" x2="480" y2="165" stroke="#1a6f8f" stroke-width="2.5" stroke-dasharray="8,5" opacity="0.5"/>
+    <line x1="585" y1="277" x2="771" y2="227" stroke="#1a6f8f" stroke-width="2.5" stroke-dasharray="8,5" opacity="0.5"/>
+    <line x1="573" y1="358" x2="633" y2="392" stroke="#1a6f8f" stroke-width="2.5" stroke-dasharray="8,5" opacity="0.5"/>
+    <line x1="387" y1="358" x2="327" y2="392" stroke="#1a6f8f" stroke-width="2.5" stroke-dasharray="8,5" opacity="0.5"/>
+    <line x1="375" y1="277" x2="184" y2="225" stroke="#b86f00" stroke-width="2.5" stroke-dasharray="8,5" opacity="0.5"/>
+  </svg>
+
+  <!-- Center: wider box -->
+  <div style="position:absolute;top:305px;left:480px;transform:translate(-50%,-50%);width:220px;text-align:center;background:#dff0f7;border:2.5px solid #1a6f8f;border-radius:14px;padding:11px 16px;z-index:2;">
+    <div style="font-weight:700;color:#1a6f8f;font-size:0.84em;line-height:1.3;">Modeling, Simulation &amp; High Performance Computing</div>
+    <div style="font-size:0.65em;color:#666;margin-top:5px;">Argonne National Laboratory</div>
+  </div>
+
+  <!-- Jonathan — top: member center(480,70) → card top-left(405,5) -->
+  <div style="position:absolute;top:5px;left:405px;width:150px;text-align:center;z-index:2;">
+    <div style="background:#eef6fa;border:1.5px solid #1a6f8f;border-radius:10px;padding:9px 11px;">
+      <img src="figures/OZIK.jpg" style="width:64px;height:64px;border-radius:50%;object-fit:cover;border:2px solid #1a6f8f;display:block;margin:0 auto 5px;"/>
+      <div style="font-weight:700;color:#0d485e;font-size:0.84em;">Jonathan Ozik</div>
+      <div style="font-size:0.69em;color:#555;">Team Lead</div>
+    </div>
+  </div>
+
+  <!-- Nicholson — top-right: member center(841,208) → card top-left(766,143) -->
+  <div style="position:absolute;top:143px;left:766px;width:160px;text-align:center;z-index:2;">
+    <div style="background:#eef6fa;border:1.5px solid #1a6f8f;border-radius:10px;padding:9px 11px;">
+      <img src="figures/COLLIER.png" style="width:64px;height:64px;border-radius:50%;object-fit:cover;border:2px solid #1a6f8f;display:block;margin:0 auto 5px;"/>
+      <div style="font-weight:700;color:#0d485e;font-size:0.84em;">Nicholson Collier</div>
+      <div style="font-size:0.69em;color:#555;">Software Engineer</div>
+    </div>
+  </div>
+
+  <!-- David — bottom-right: member center(703,432) → card top-left(628,367) -->
+  <div style="position:absolute;top:367px;left:628px;width:150px;text-align:center;z-index:2;">
+    <div style="background:#eef6fa;border:1.5px solid #1a6f8f;border-radius:10px;padding:9px 11px;">
+      <img src="figures/OGARA.jpeg" style="width:64px;height:64px;border-radius:50%;object-fit:cover;border:2px solid #1a6f8f;display:block;margin:0 auto 5px;"/>
+      <div style="font-weight:700;color:#0d485e;font-size:0.84em;">David O'Gara</div>
+      <div style="font-size:0.69em;color:#555;">Computational Statistician</div>
+    </div>
+  </div>
+
+  <!-- Arindam — bottom-left: member center(257,432) → card top-left(182,367) -->
+  <div style="position:absolute;top:367px;left:182px;width:150px;text-align:center;z-index:2;">
+    <div style="background:#eef6fa;border:1.5px solid #1a6f8f;border-radius:10px;padding:9px 11px;">
+      <img src="figures/FADIKAR.jpg" style="width:64px;height:64px;border-radius:50%;object-fit:cover;border:2px solid #1a6f8f;display:block;margin:0 auto 5px;"/>
+      <div style="font-weight:700;color:#0d485e;font-size:0.84em;">Arindam Fadikar</div>
+      <div style="font-size:0.69em;color:#555;">Computational Statistician</div>
+    </div>
+  </div>
+
+  <!-- Mickael — top-left: member center(119,208) → card top-left(44,143) -->
+  <div style="position:absolute;top:143px;left:34px;width:155px;text-align:center;z-index:2;">
+    <div style="background:#fdf5e6;border:1.5px dashed #b86f00;border-radius:10px;padding:9px 11px;">
+      <img src="figures/BINOIS.jpg" style="width:64px;height:64px;border-radius:50%;object-fit:cover;border:2px solid #b86f00;display:block;margin:0 auto 5px;"/>
+      <div style="font-weight:700;color:#0d485e;font-size:0.84em;">Mickael Binois</div>
+      <div style="font-size:0.69em;color:#555;">Outside Collaborator</div>
+      <div style="font-size:0.64em;color:#b86f00;margin-top:2px;">Inria</div>
+    </div>
+  </div>
+
+</div>
+```
+
 ## The Calibration Challenge
 
 <!-- **Stochastic simulation model, observed data - find optimal parameter set** -->
@@ -167,7 +239,7 @@ Finding good $(\theta, r)$ pairs = [**trajectory discovery**]{.hl-blue}, not jus
 :::
 :::
 ::: {.column width="40%"}
-**Practical benefit:**
+**Benefit:**
 
 - Far fewer simulations needed to learn the surface
 - Reuse the same seeds across parameter values

@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "index.html#our-team",
+    "href": "index.html#our-team",
+    "title": "Efficient Trajectory Discovery with Adaptive Batch Sampling",
+    "section": "Our Team",
+    "text": "Our Team\n\n\n\n  \n  \n  \n  \n    \n    \n    \n    \n    \n  \n\n  \n  \n    Modeling, Simulation & High Performance Computing\n    Argonne National Laboratory\n  \n\n  \n  \n    \n      \n      Jonathan Ozik\n      Team Lead\n    \n  \n\n  \n  \n    \n      \n      Nicholson Collier\n      Software Engineer\n    \n  \n\n  \n  \n    \n      \n      David O'Gara\n      Computational Statistician\n    \n  \n\n  \n  \n    \n      \n      Arindam Fadikar\n      Computational Statistician\n    \n  \n\n  \n  \n    \n      \n      Mickael Binois\n      Outside Collaborator\n      Inria"
+  },
+  {
     "objectID": "index.html#the-calibration-challenge",
     "href": "index.html#the-calibration-challenge",
     "title": "Efficient Trajectory Discovery with Adaptive Batch Sampling",
@@ -32,7 +39,7 @@
     "href": "index.html#common-random-numbers-crn",
     "title": "Efficient Trajectory Discovery with Adaptive Batch Sampling",
     "section": "Common Random Numbers (CRN)",
-    "text": "Common Random Numbers (CRN)\nKey insight: fixing the seed makes \\(f(\\theta, r)\\) smooth in \\(\\theta\\)\n\n\n\nFix seed \\(r = r_0\\), vary \\(\\theta\\) across its domain\nThe output \\(f(\\theta, r_0)\\) varies smoothly with \\(\\theta\\)\nA GP can interpolate this smooth function accurately\nRepeat for many seeds: each gives a “slice” of the output surface\n\n\nCRN converts a noisy, non-smooth calibration surface into a collection of smooth functions — one per seed.\n\n\nPractical benefit:\n\nFar fewer simulations needed to learn the surface\nReuse the same seeds across parameter values\nEnables variance reduction via control variates\nStandard in simulation optimization literature\n\n\n\nOur choice of surrogate: a Gaussian Process (GP) fitted over the joint \\((\\theta, r)\\) space — exploiting CRN smoothness to interpolate individual trajectories efficiently."
+    "text": "Common Random Numbers (CRN)\nKey insight: fixing the seed makes \\(f(\\theta, r)\\) smooth in \\(\\theta\\)\n\n\n\nFix seed \\(r = r_0\\), vary \\(\\theta\\) across its domain\nThe output \\(f(\\theta, r_0)\\) varies smoothly with \\(\\theta\\)\nA GP can interpolate this smooth function accurately\nRepeat for many seeds: each gives a “slice” of the output surface\n\n\nCRN converts a noisy, non-smooth calibration surface into a collection of smooth functions — one per seed.\n\n\nBenefit:\n\nFar fewer simulations needed to learn the surface\nReuse the same seeds across parameter values\nEnables variance reduction via control variates\nStandard in simulation optimization literature\n\n\n\nOur choice of surrogate: a Gaussian Process (GP) fitted over the joint \\((\\theta, r)\\) space — exploiting CRN smoothness to interpolate individual trajectories efficiently."
   },
   {
     "objectID": "index.html#gaussian-process-a-brief-primer",
