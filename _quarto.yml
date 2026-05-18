@@ -20,7 +20,7 @@ format:
     toc: false
     code-fold: false
     code-overflow: scroll
-    self-contained: false
+    self-contained: true
     progress: true
     transition: fade
     navigation-mode: vertical

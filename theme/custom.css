@@ -66,7 +66,7 @@ section[data-state="title-slide"] h1 {
   background: rgba(240, 245, 250, 0.9);
   padding: 8px 20px;
   border-radius: 12px;
-  margin: -30px 0 25px 0;
+  margin: -10px 0 25px 0;
   border: 1px solid rgba(0,0,0,0.15);
   border-left: 8px solid #1a6f8f;
   font-weight: 700;
@@ -131,7 +131,7 @@ section[data-state="title-slide"] h1 {
 }
 
 /* ---------------------------
-   COLUMN LAYOUTS
+   COLUMN IMAGE / HEADING OVERRIDES
 ---------------------------- */
 
 .reveal .column img {
@@ -148,43 +148,43 @@ section[data-state="title-slide"] h1 {
   text-align: center;
 }
 
-/* 3-column: narrow–wide–narrow */
-.reveal .columns.three-panel {
-  display: flex;
-  gap: 1.5rem;
+/* ---------------------------
+   COLUMN LAYOUTS
+   Quarto sets div.column { display: inline-block } and
+   div.columns { display: initial }. We override with flex
+   so gap/padding approach works reliably.
+   width="X%" on .column becomes flex-basis; box-sizing:border-box
+   keeps padding inside that width so totals don't overflow.
+---------------------------- */
+
+.reveal .columns {
+  display: flex !important;
+  align-items: flex-start;
 }
 
-.reveal .columns.three-panel > .column:nth-child(1),
-.reveal .columns.three-panel > .column:nth-child(3) {
-  flex: 0 0 33%;
+.reveal .columns > .column {
+  display: block !important;   /* undo inline-block */
+  flex-shrink: 1;
+  flex-grow: 0;
+  box-sizing: border-box;
 }
 
-.reveal .columns.three-panel > .column:nth-child(2) {
-  flex: 0 0 34%;
+/* Separator gap on every non-first column */
+.reveal .columns > .column + .column {
+  padding-left: 3rem;
+  border-left: 2px solid rgba(26, 111, 143, 0.15);
 }
 
-/* 2-column: wide–narrow */
-.reveal .columns.two-wide-narrow-panel {
-  display: flex;
-  gap: 1.5rem;
-}
-
+/* Named helpers for explicit flex-basis overrides */
 .reveal .columns.two-wide-narrow-panel > .column:nth-child(1) {
-  flex: 0 0 60%;
+  flex: 0 0 58%;
 }
-
 .reveal .columns.two-wide-narrow-panel > .column:nth-child(2) {
-  flex: 0 0 40%;
-}
-
-/* 3-column: equal */
-.reveal .columns.three-equal-panel {
-  display: flex;
-  gap: 1.5rem;
+  flex: 0 0 38%;
 }
 
 .reveal .columns.three-equal-panel > .column {
-  flex: 0 0 33.33%;
+  flex: 1 1 0;
 }
 
 /* ---------------------------
@@ -256,4 +256,45 @@ section[data-state="title-slide"] h1 {
 .callout {
   font-size: 1.2em !important;
   color: #e05316;
+}
+
+/* ---------------------------
+   COLOR HIGHLIGHT UTILITIES
+   Usage in qmd: [text]{.hl-blue}
+---------------------------- */
+
+/* Teal-blue: method names, surrogate terms (CRNGP, CRN, GP) */
+.reveal .hl-blue {
+  color: #1a6f8f;
+  font-weight: 600;
+}
+
+/* Amber: key concepts, definitions (trajectory, seed) */
+.reveal .hl-amber {
+  color: #b86f00;
+  font-weight: 600;
+}
+
+/* Green: positive results, advantages */
+.reveal .hl-green {
+  color: #2a7a45;
+  font-weight: 600;
+}
+
+/* Orange-red: numbers, emphasis, aCRN branding */
+.reveal .hl-orange {
+  color: #e05316;
+  font-weight: 600;
+}
+
+/* Muted red: gaps, limitations, failing methods */
+.reveal .hl-red {
+  color: #b83232;
+  font-weight: 600;
+}
+
+/* Purple: algorithm steps, structural terms */
+.reveal .hl-purple {
+  color: #6b3fa0;
+  font-weight: 600;
 }
