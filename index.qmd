@@ -290,7 +290,7 @@ Both require [**many**]{.hl-red} simulator evaluations at many $\theta$ values.
 ::: {.column width="50%" }
 In a stochastic simulator:
 
-$$y = f(\theta), \quad r \sim \text{Uniform}$$
+$$y = f(\theta, r), \quad r \sim \text{Uniform}$$
 
 where $r$ is a [**random seed**]{.hl-amber} governing the stochastic path.
 
@@ -472,7 +472,7 @@ $$k\bigl((\theta,r),(\theta',r')\bigr) = k_\theta(\theta, \theta') \times k_s(r,
 
 where the seed kernel gives [**constant inter-replicate correlation $\rho$**]{.hl-amber} when $r \neq r'$:
 
-$$k_s(r, r') = \begin{cases} 1 & r = r' \\ \rho & r \neq r' \end{cases}$$
+$$k_s(r, r') = \begin{cases} 1 & r = r' \\ \rho & r \neq r', \; \rho<1 \end{cases}$$
 :::
 ::: {.column}
 ::: {.r-stack}
