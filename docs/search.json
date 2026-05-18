@@ -7,6 +7,13 @@
     "text": "Our Team\n\n\n\n  \n  \n    \n\n      \n        \n        \n        \n        \n        \n      \n\n      \n        Modeling, Simulation & High Performance Computing\n        Argonne National Laboratory\n      \n\n      \n        \n          \n          Jonathan Ozik\n          Team Lead\n        \n      \n\n      \n        \n          \n          Nicholson Collier\n          Software Engineer\n        \n      \n\n      \n        \n          \n          David O'Gara\n          Computational Statistician\n        \n      \n\n      \n        \n          \n          Arindam Fadikar\n          Computational Statistician\n        \n      \n\n      \n        \n          \n          Mickael Binois\n          Outside Collaborator\n          Inria"
   },
   {
+    "objectID": "index.html#calibration-landscape",
+    "href": "index.html#calibration-landscape",
+    "title": "Efficient Trajectory Discovery with Adaptive Batch Sampling",
+    "section": "Calibration Landscape",
+    "text": "Calibration Landscape\n\n\n\n  \n  \n\n    \n    \n      Epidemic Simulation Calibration\n    \n\n    \n    \n      \n      \n    \n\n    \n    \n      Complex, Expensive Stochastic Simulators\n      many evaluations needed — computational bottleneck\n    \n\n    \n    \n      \n      \n      \n      \n      \n      \n    \n\n    \n    \n\n      \n      \n        \n          Emulator-based Methods\n        \n        \n          ▸Posterior Inference\n          ▸Bayesian Optimization\n          ▸Variational Inference\n          ▸Trajectory-Oriented Opt. ← this work\n        \n      \n\n      \n      \n        \n          Simulation-based Inference\n        \n        \n          ▸Approx. Bayesian Computation\n          ▸Neural Posterior Estimation\n          ▸Sequential neural likelihood\n          ▸Neural ratio estimation\n        \n      \n\n    \n  \n\n  \n  \n    \n      Typical Challenges\n    \n    \n\n      \n        High Input Dimension\n        many parameters θ ∈ ℝd, d ≫ 10\n      \n\n      \n        High Output Dimension\n        multivariate time-series outputs, functional data\n      \n\n      \n        Multi-objective\n        multiple competing outcomes, Pareto trade-offs\n      \n\n      \n        \n          Stochastic Simulators\n          tension between repeated runs\n        \n        \n          ★ Stochastic Simulators\n          tension between repeated runs — focus of this talk"
+  },
+  {
     "objectID": "index.html#the-calibration-challenge",
     "href": "index.html#the-calibration-challenge",
     "title": "Efficient Trajectory Discovery with Adaptive Batch Sampling",

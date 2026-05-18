@@ -1,6 +1,6 @@
 ---
 title: "Efficient Trajectory Discovery with Adaptive Batch Sampling"
-subtitle: "Bayesian Optimization"
+subtitle: "2026 CISNET Bladder Cancer Mid-Year Meeting"
 author: "Presenter: Arindam Fadikar"
 affiliation: "Decision and Infrastructure Sciences"
 institute: "Argonne National Laboratory"
@@ -137,6 +137,113 @@ ggsave("figures/us_map.png", p_us, width = 6, height = 3.5, dpi = 150, bg = "tra
   <div style="flex:1;display:flex;flex-direction:column;gap:8px;padding-top:30px;">
     <img src="figures/world_map.png" style="width:100%;"/>
     <img src="figures/us_map.png" style="width:100%;"/>
+  </div>
+
+</div>
+```
+
+## Calibration Landscape
+
+```{=html}
+<!-- Outer flex: flowchart (66%) | challenges (33%) -->
+<div style="display:flex;align-items:center;gap:120px;width:1080px;margin:60px auto 0;font-size:0.9em;">
+
+  <!-- LEFT: flowchart column (670px) -->
+  <div style="flex:0 0 670px;display:flex;flex-direction:column;align-items:center;">
+
+    <!-- Problem box -->
+    <div style="background:#dff0f7;border:2.5px solid #1a6f8f;border-radius:10px;padding:9px 28px;font-weight:700;color:#0d485e;font-size:1em;text-align:center;width:100%;box-sizing:border-box;">
+      Epidemic Simulation Calibration
+    </div>
+
+    <!-- Arrow down -->
+    <div style="display:flex;flex-direction:column;align-items:center;">
+      <div style="width:2px;height:16px;background:#1a6f8f;"></div>
+      <div style="width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:9px solid #1a6f8f;"></div>
+    </div>
+
+    <!-- Expensive simulators box -->
+    <div style="background:#eef6fa;border:2px solid #1a6f8f;border-radius:10px;padding:8px 24px;text-align:center;color:#0d485e;width:100%;box-sizing:border-box;">
+      <div style="font-weight:700;">Complex, Expensive Stochastic Simulators</div>
+      <div style="font-size:0.78em;color:#555;margin-top:2px;">many evaluations needed &mdash; computational bottleneck</div>
+    </div>
+
+    <!-- Fork SVG scaled to 670px: center=335, left branch=160, right branch=510 -->
+    <svg width="670" height="52" style="display:block;overflow:visible;">
+      <line x1="335" y1="0"  x2="335" y2="22" stroke="#1a6f8f" stroke-width="2"/>
+      <line x1="160" y1="22" x2="510" y2="22" stroke="#1a6f8f" stroke-width="2"/>
+      <line x1="160" y1="22" x2="160" y2="42" stroke="#1a6f8f" stroke-width="2"/>
+      <line x1="510" y1="22" x2="510" y2="42" stroke="#1a6f8f" stroke-width="2"/>
+      <polygon points="153,42 167,42 160,52" fill="#1a6f8f"/>
+      <polygon points="503,42 517,42 510,52" fill="#1a6f8f"/>
+    </svg>
+
+    <!-- Two branch boxes in 670px (gap 30px → each ≈320px) -->
+    <div style="display:flex;gap:30px;width:670px;align-items:flex-start;">
+
+      <!-- Emulator branch (highlighted) -->
+      <div style="flex:1;border:2.5px solid #1a6f8f;border-radius:12px;padding:12px 16px;background:#f0f8fc;">
+        <div style="font-weight:700;color:#1a6f8f;font-size:0.92em;text-align:center;padding-bottom:7px;margin-bottom:9px;border-bottom:1.5px solid #c5dfe8;">
+          Emulator-based Methods
+        </div>
+        <div style="line-height:1.8;font-size:0.84em;color:#1a1a1a;">
+          <div style="padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:#1a6f8f;font-weight:700;">▸</span>Posterior Inference</div>
+          <div style="padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:#1a6f8f;font-weight:700;">▸</span>Bayesian Optimization</div>
+          <div style="padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:#1a6f8f;font-weight:700;">▸</span>Variational Inference</div>
+          <div style="padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:#e05316;font-weight:700;">▸</span><span style="color:#e05316;font-weight:600;">Trajectory-Oriented Opt. ← this work</span></div>
+        </div>
+      </div>
+
+      <!-- SBI branch (muted) -->
+      <div style="flex:1;border:2px solid #94a3b8;border-radius:12px;padding:12px 16px;background:#f7f8fa;">
+        <div style="font-weight:700;color:#475569;font-size:0.92em;text-align:center;padding-bottom:7px;margin-bottom:9px;border-bottom:1.5px solid #cbd5e1;">
+          Simulation-based Inference
+        </div>
+        <div style="line-height:1.8;font-size:0.84em;color:#444;">
+          <div style="padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:#64748b;font-weight:700;">▸</span>Approx. Bayesian Computation</div>
+          <div style="padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:#64748b;font-weight:700;">▸</span>Neural Posterior Estimation</div>
+          <div style="padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:#64748b;font-weight:700;">▸</span>Sequential neural likelihood</div>
+          <div style="padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:#64748b;font-weight:700;">▸</span>Neural ratio estimation</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RIGHT: challenges column (~386px) -->
+  <div style="flex:1;">
+    <div style="font-weight:700;color:#92400e;font-size:0.92em;text-align:center;margin-bottom:14px;padding-bottom:7px;border-bottom:2px solid #d97706;">
+      Typical Challenges
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;font-size:0.86em;">
+
+      <div style="background:#fef3c7;border-left:4px solid #d97706;border-radius:0 8px 8px 0;padding:9px 13px;">
+        <div style="font-weight:700;color:#92400e;">High Input Dimension</div>
+        <div style="color:#555;font-size:0.88em;margin-top:2px;">many parameters θ ∈ ℝ<sup>d</sup>, d ≫ 10</div>
+      </div>
+
+      <div style="background:#fef3c7;border-left:4px solid #d97706;border-radius:0 8px 8px 0;padding:9px 13px;">
+        <div style="font-weight:700;color:#92400e;">High Output Dimension</div>
+        <div style="color:#555;font-size:0.88em;margin-top:2px;">multivariate time-series outputs, functional data</div>
+      </div>
+
+      <div style="background:#fef3c7;border-left:4px solid #d97706;border-radius:0 8px 8px 0;padding:9px 13px;">
+        <div style="font-weight:700;color:#92400e;">Multi-objective</div>
+        <div style="color:#555;font-size:0.88em;margin-top:2px;">multiple competing outcomes, Pareto trade-offs</div>
+      </div>
+
+      <div style="position:relative;">
+        <div class="fragment fade-out" data-fragment-index="1" style="background:#fef3c7;border-left:4px solid #d97706;border-radius:0 8px 8px 0;padding:9px 13px;">
+          <div style="font-weight:700;color:#92400e;">Stochastic Simulators</div>
+          <div style="color:#555;font-size:0.88em;margin-top:2px;">tension between repeated runs</div>
+        </div>
+        <div class="fragment fade-in" data-fragment-index="1" style="position:absolute;top:0;left:0;right:0;background:#fde68a;border-left:6px solid #b45309;border-radius:0 8px 8px 0;padding:9px 13px;box-shadow:0 3px 12px rgba(180,83,9,0.3);">
+          <div style="font-weight:700;color:#7c2d12;font-size:1.05em;">★ Stochastic Simulators</div>
+          <div style="color:#444;font-size:0.88em;margin-top:2px;">tension between repeated runs &mdash; <strong>focus of this talk</strong></div>
+        </div>
+      </div>
+
+    </div>
   </div>
 
 </div>
